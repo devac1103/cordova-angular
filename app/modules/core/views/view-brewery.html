@@ -1,0 +1,51 @@
+<div class="alert alert-info" ng-if="brewery == null">
+    Loading Brewery Information...
+</div>
+<div class="brewery-container" ng-if="brewery != null">
+    <div class="header-row col-xs-12">
+        <h3>{{ brewery.get('businessname') }}</h3>
+        <div class="col-xs-9 business-address">
+            {{ brewery.get('address') }}<br />
+            {{ brewery.get('city') }}, {{ brewery.get('state') }} {{ brewery.get('zip') }}
+        </div>
+        <div class="col-xs-3 button-wrapper">
+            <button class="btn btn-primary col-xs-12 btn-sm go-button" ng-click="navigateTo({{brewery.get('geolat')}},{{brewery.get('geolong')}})">
+                <p ng-if="distance != ''">{{ distance}}</p>
+                <p><i class="fa fa-map-marker"></i></p>
+            </button>
+        </div>
+    </div>
+    <div class="middle-row col-xs-12">
+        <img class="brewery-fulllogo" src="{{brewery.get('logo').url()}}" />
+        <div ng-if="brewery.get('brew')" class="feature-item"><i class="fa fa-check-circle"></i>Brewery</div>
+        <div ng-if="brewery.get('food')" class="feature-item"><i class="fa fa-check-circle"></i>Serves Food</div>
+        <div ng-if="brewery.get('lodging')" class="feature-item"><i class="fa fa-check-circle"></i>Has Lodging</div>
+        <div ng-if="brewery.get('growler')" class="feature-item"><i class="fa fa-check-circle"></i>Uses Growlers</div>
+        <div ng-if="brewery.get('LWC')" class="feature-item"><i class="fa fa-check-circle"></i>Living Wage Certified <img class="living-wage-icon" src="img/icons/living-wage-certified.svg"/></div>
+        <div ng-if="brewery.get('entertainment') !== undefined" ng-repeat="entertainment in brewery.get('entertainment').split(',')">
+            <i class="fa fa-check-circle"></i>{{ entertainment.trim() }}
+        </div>
+    </div>
+    <div class="bottom-row col-xs-12">
+        <span class="phone-number">{{ brewery.get('phone') }}</span>
+        <hour-display></hour-display>
+    </div>
+    <div class="alert alert-info" ng-if="specials === null && brewery.get('Pay')">
+        Loading Specials
+    </div>
+    <div class="specials-container col-xs-12" ng-if="specials !== null && specials.length > 0">
+        <h4>Specials</h4>
+        <div class="special" ng-repeat="special in specials" ng-click="specialRedeem(special)">
+            {{ special.get('description')}}
+        </div>
+    </div>
+    <div class="alert alert-info" ng-if="beers === null && brewery.get('Pay')">
+        Loading Beers
+    </div>
+    <div class="on-tap-row col-xs-12" ng-if="beers !== null">
+        <h4>Beers</h4>
+        <div class="beer" ng-repeat="beer in beers" ng-click="showBeer(beer.id)">
+            {{ beer.get('breweries')[0].name }} {{ beer.get('name') }}
+        </div>
+    </div>
+</div>

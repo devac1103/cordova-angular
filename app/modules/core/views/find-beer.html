@@ -1,0 +1,23 @@
+<section ng-if="!loadingBeers">
+    <div class="container">
+        <p>Find and Drink Your Favorite Beers</p>
+        <div class="input-group">
+            <input id="find-beer-filter" type="text" class="form-control" ng-model="find_beer.search" placeholder="Search by brewery. For example: Sierra Nevada">
+            <span class="input-group-addon" ng-click="updateBeers(find_beer.search);"><i class="fa fa-search"></i></span>
+        </div>
+        <a href="#!/comment" style="color:black;">Can't find a beer? Let us know here.</a>
+        <ul class="beer-list list-group" ng-if="beers.length > 0 && ! refreshingBeers">
+            <li ng-repeat="beer in beers" data-full-name="{{ beer.get('full_name') }}" class="list-group-item find-beer-row" ng-click="showBeer('{{ beer.id }}')">
+                <beer-row></beer-row>
+            </li>
+        </ul>
+        <div class="alert alert-info" ng-if="refreshingBeers">
+            Refreshing beer list, please wait
+        </div>
+    </div>
+</section>
+<section ng-if="loadingBeers">
+    <div class="container">
+        <div class="alert alert-warning">Please wait while we load the available beers</div>
+    </div>
+</section>

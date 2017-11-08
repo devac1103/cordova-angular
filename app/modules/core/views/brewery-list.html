@@ -1,0 +1,11 @@
+<div class="alert alert-{{ locationStatus.type }} col-xs-12" ng-if="currentLocation === null">{{ locationStatus.message }}</div>
+<section ng-if="currentLocation !== null">
+    <ul class="brewery-list list-group">
+        <li ng-click="showBrewery('{{ brewery.id }}')" 
+            ng-repeat="brewery in breweries | orderBy: brewery.distance" 
+            class="list-group-item" 
+            data-sorter="{{ calcDistance(brewery.get('geolat'),brewery.get('geolong')) }}">
+            <brewery-row></brewery-row>
+        </li>
+    </ul>
+</section>

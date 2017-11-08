@@ -1,0 +1,23 @@
+<div class="panel panel-default home-message">
+    <div class="panel-body">
+        {{ message.body }}
+    </div>
+</div>
+<div class="container">
+    <special ng-repeat="special in specials"></special>
+</div>
+<div class="panel panel-default homesection-panel" ng-repeat="homeSection in homeSections">
+    <div class="panel-heading" ng-hide="homeSection.title == ''">
+        {{ homeSection.title }}
+    </div>
+    <ul class="list-group" ng-repeat="row in homeSection.rows">
+        <a href="#!/{{ row.link }}" class="home-link">
+            <li class="list-group-item" ng-click="{{ row.ng_click }}">
+                <i ng-if="row.icon_type == 'fa'" class="fa fa-{{ row.icon }} home-icon"></i> 
+                <i ng-if="row.icon_type == 'glyphicon'" class="glyphicon glyphicon-{{ row.icon }} home-icon"></i>
+                <img ng-if="row.icon_type == 'custom'" src="img/icons/{{ row.icon }}" class="home-icon" />
+                {{ row.title }}
+            </li>
+        </a>
+    </ul>
+</div>

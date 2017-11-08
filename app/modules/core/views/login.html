@@ -1,0 +1,50 @@
+<style>
+    .btn{
+        margin-top:10px;
+    }
+</style>
+<section>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 alert alert-{{ msg.type }}" ng-repeat="msg in messages">
+            {{ msg.message }}
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 form--login" ng-show="loginForm == 'regular'">
+            <div class="row">
+                <input placeholder="username" type="text" ng-model="user.username" name="login" id="login" class="form-control">
+            </div>
+            <div class="row">
+                <input placeholder="password" type="password" ng-model="user.password" class="form-control">
+            </div>
+            <div class="row">
+                <button class="btn btn-primary col-xs-12" ng-click="logIn(user)">Log In</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary col-xs-12" ng-click="loginWithFacebook()"><i class="fa fa-facebook"></i> Login With Facebook</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary col-xs-12" ng-click="loginForm = 'signUp'">Sign Up</button>
+            </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 form--login" ng-show="loginForm == 'signUp'">
+            <div class="row">
+                <input placeholder="email" type="text" ng-model="user.email" class="form-control">
+            </div>
+            <div class="row">
+                <input placeholder="repeat email" type="text" ng-model="user.username" class="form-control">
+            </div>
+            <div class="row" ng-show="user.password != user.password_confirm">
+                <div class="alert alert-danger">Your passwords need to match</div>
+            </div>
+            <div class="row">
+                <input placeholder="password" type="password" ng-model="user.password" class="form-control">
+            </div>
+            <div class="row">
+                <input placeholder="Repeat Password" type="password" ng-model="user.password_confirm" class="form-control">
+            </div>
+            <div class="row">
+                <button class="btn btn-success col-xs-12" ng-click="signUp(user)">Sign Up</button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary col-xs-12" ng-click="loginForm = 'regular'">Go Back To Log In</button>
+            </div>
+        </div>
+</section>

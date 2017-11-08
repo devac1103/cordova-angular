@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="pn.br.mobile" version="0.9.9" android-versionCode="4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Brewpon</name>
+    <description>
+        An application for discovering craft beer in and around Asheville NC, Beer City USA
+    </description>
+    <author email="dhensley@ecbizsolutions.com" href="ecbizsolutions.com">
+        ECBizSolutions Development
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <platform name="android">
+	    <!-- you can use any density that exists in the Android project -->
+	    
+	</platform>
+	<preference name="SplashScreen" value="screen"/>
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+</widget>

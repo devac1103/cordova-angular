@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css styles/vendor.css -->
+    <!-- injector:bowercss -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+    <!-- build:css styles/custom.css -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="css/brewpon-styles.css">
+    <link rel="stylesheet" href="css/ecbiz-styles.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+    <script src="cordova.js"></script>
+</head>
+
+<body ng-cloak="">
+	<div id="fb-root"></div>
+    <!-- =================== Navigation bar =================== -->
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-inner clearfix">
+            <span class="back-button pull-left" ng-show="!isHome()" onClick="window.history.back();">Back</span>
+            <div class="brewpon-svg-container clearfix">
+                <svg class="brewpon-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 360 80" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g fill="#FFFFFF">
+                            <path d="M17.722405 15.5256065L21.7068501 15.5256065C25.2605444 15.5256065 26.3374215 16.819407 26.3374215 23.3962264 26.3374215 30.1886792 25.2605444 31.2668464 21.7068501 31.2668464L17.722405 31.2668464 17.722405 15.5256065ZM2 78.490566L25.3682321 78.490566C37.5369429 78.490566 42.4905773 73.0997305 42.4905773 62.7493261L42.4905773 51.212938C42.4905773 43.5579515 39.4753216 39.245283 32.5833084 38.1671159L32.5833084 37.9514825C40.1214478 35.5795148 42.0598265 29.7574124 42.0598265 23.93531L42.0598265 17.2506739C42.0598265 6.90026954 37.106192 1.50943396 24.9374813 1.50943396L2 1.50943396 2 78.490566ZM17.722405 45.2830189L21.383787 45.2830189C25.9066707 45.2830189 26.7681723 46.1455526 26.7681723 54.8787062 26.5527969 63.3962264 25.9066707 64.4743935 21.383787 64.4743935L17.722405 64.4743935 17.722405 45.2830189ZM65.5357463 78.490566L65.5357463 45.2830189 69.5201914 45.2830189C72.7508226 45.2830189 74.5815136 46.5768194 74.5815136 49.1644205L74.5815136 75.3638814C74.5815136 76.2264151 74.9045767 77.3045822 75.550703 78.490566L91.3807957 78.490566C90.3039186 77.3045822 90.3039186 76.0107817 90.3039186 70.0808625L90.3039186 53.3692722C90.3039186 43.5579515 87.2886629 39.245283 80.8274005 38.1671159L80.8274005 37.9514825C87.9347891 36.8733154 89.8731678 31.0512129 89.8731678 26.4150943L89.8731678 17.2506739C89.8731678 4.95956873 83.7349686 1.50943396 69.9509423 1.50943396L49.8133413 1.50943396 49.8133413 78.490566 65.5357463 78.490566ZM65.5357463 15.5256065L69.5201914 15.5256065C73.2892611 15.5256065 74.1507628 17.0350404 74.1507628 23.3962264 74.1507628 30.1886792 72.8585103 31.2668464 69.5201914 31.2668464L65.5357463 31.2668464 65.5357463 15.5256065ZM97.6266826 78.490566L129.932994 78.490566 129.932994 64.4743935 113.349088 64.4743935 113.349088 45.2830189 129.17918 45.2830189 129.17918 31.2668464 113.349088 31.2668464 113.349088 15.5256065 129.932994 15.5256065 129.932994 1.50943396 97.6266826 1.50943396 97.6266826 78.490566ZM145.009273 78.490566L164.823811 78.490566 171.500449 19.6226415 171.715824 19.6226415 178.392462 78.490566 198.207 78.490566 210.052647 1.50943396 193.791804 1.50943396 187.653605 61.7789757 187.438229 61.7789757 180.438528 1.50943396 162.777745 1.50943396 155.993419 61.671159 155.778044 61.671159 149.424469 1.50943396 133.163625 1.50943396 145.009273 78.490566ZM230.944062 51.3207547L234.605444 51.3207547C250.004786 51.3207547 254.850733 47.4393531 254.850733 33.7466307L254.850733 19.083558C254.850733 5.39083558 250.004786 1.50943396 234.605444 1.50943396L215.221657 1.50943396 215.221657 78.490566 230.944062 78.490566 230.944062 51.3207547ZM230.944062 15.5256065L234.928507 15.5256065C238.697577 15.5256065 239.559079 16.1725067 239.559079 27.1698113 239.559079 35.5795148 238.482202 37.3045822 234.928507 37.3045822L230.944062 37.3045822 230.944062 15.5256065ZM275.742148 18.2210243C275.742148 15.2021563 277.0344 14.0161725 280.265031 14.0161725 283.495663 14.0161725 284.787915 15.2021563 284.787915 18.2210243L284.787915 61.7789757C284.787915 64.7978437 283.495663 65.9838275 280.265031 65.9838275 277.0344 65.9838275 275.742148 64.7978437 275.742148 61.7789757L275.742148 18.2210243ZM260.019743 61.8867925C260.019743 76.3342318 266.481005 80 280.265031 80 294.049058 80 300.51032 76.3342318 300.51032 61.8867925L300.51032 18.1132075C300.51032 3.66576819 294.049058 0 280.265031 0 266.481005 0 260.019743 3.66576819 260.019743 18.1132075L260.019743 61.8867925ZM342.400838 55.7412399L342.185462 55.7412399 328.832187 1.50943396 308.909961 1.50943396 308.909961 78.490566 323.770864 78.490566 323.770864 24.690027 323.98624 24.690027 337.554891 78.490566 357.261741 78.490566 357.261741 1.50943396 342.400838 1.50943396 342.400838 55.7412399Z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-placeholder"></div>
+    <div id="content-section" role="main">
+        <div class="container">
+            <div class="row">
+                <section id="uiview" ui-view></section>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.main -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- injector:bowerjs -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-mocks/angular-mocks.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-touch/angular-touch.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/angular-ui-utils/ui-utils.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/parse-js-sdk/lib/parse.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+    <!-- build:js scripts/custom.js -->
+    <!-- injector:js -->
+    <script src="js/config.js"></script>
+    <script src="js/application.js"></script>
+    <script src="modules/core/core.js"></script>
+    <script src="modules/core/config/routes.js"></script>
+    <script src="modules/core/services/beer-style.js"></script>
+    <script src="modules/core/services/beer.js"></script>
+    <script src="modules/core/services/brewery.js"></script>
+    <script src="modules/core/services/comments.js"></script>
+    <script src="modules/core/services/favorite-beer-service.js"></script>
+    <script src="modules/core/services/home-message-service.js"></script>
+    <script src="modules/core/services/home-sections-service.js"></script>
+    <script src="modules/core/services/hours-of-operation-service.js"></script>
+    <script src="modules/core/services/location.js"></script>
+    <script src="modules/core/services/login-flag.js"></script>
+    <script src="modules/core/services/map-calc.js"></script>
+    <script src="modules/core/services/parse.js"></script>
+    <script src="modules/core/services/specials.js"></script>
+    <script src="modules/core/directives/beer-row.js"></script>
+    <script src="modules/core/directives/brewery-row.js"></script>
+    <script src="modules/core/directives/brewery-view.js"></script>
+    <script src="modules/core/directives/hour-display.js"></script>
+    <script src="modules/core/directives/object-list.js"></script>
+    <script src="modules/core/directives/specials-directive.js"></script>
+    <script src="modules/core/controllers/beer-style.js"></script>
+    <script src="modules/core/controllers/beer.js"></script>
+    <script src="modules/core/controllers/brewery.js"></script>
+    <script src="modules/core/controllers/comment.js"></script>
+    <script src="modules/core/controllers/find-beer.js"></script>
+    <script src="modules/core/controllers/home.js"></script>
+    <script src="modules/core/controllers/info.js"></script>
+    <script src="modules/core/controllers/login.js"></script>
+    <script src="modules/core/controllers/view-beer.js"></script>
+    <script src="modules/core/controllers/view-brewery.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+</body>
+
+</html>

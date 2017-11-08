@@ -1,0 +1,31 @@
+<div class="beer-container">
+    <div class="header-row col-xs-12">
+        <img ng-if="currentBeer.get('image')" src="{{ currentBeer.get('image').url() }}">
+        <h3>{{ currentBeer.get('breweries')[0].name }} {{ currentBeer.get('name') }}</h3>
+    </div>
+    <div class="middle-row col-xs-12">
+        <div class="col-xs-9 col-md-9 col-lg-10">
+            <p class="beer-brewery">Brewery : {{ currentBeer.get('breweries')[0].name }}</p>
+            {{ currentBeer.get('description') }}
+            <p class="abv">ABV: {{ currentBeer.get('abv') }}</p>
+            <p ng-click="go('beer-style/' + style.id)" ng-if="style !== undefined" class="style">Style : {{ style.get('name') }}</p>
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-2" ng-if="! isLoggedIn()">
+            <img class="favorite-icon pull-right" src="img/icons/favorite-nocolor.png" class="col-xs-12" ng-click="go('login/loginForFavorites')" />
+        </div>
+        <div class="col-xs-3 col-md-3 col-lg-2" ng-if="favorites.indexOf(currentBeer.id) !== -1 && isLoggedIn()">
+    		<img class="favorite-icon pull-right" src="img/icons/favorite-color.png" class="col-xs-12" ng-click="favorite('remove',currentBeer.id); $event.stopPropagation();" />
+    	</div>
+        <div class="col-xs-3 col-md-3 col-lg-2" ng-if="favorites.indexOf(currentBeer.id) === -1 && isLoggedIn()">
+    		<img class="favorite-icon pull-right" src="img/icons/favorite-nocolor.png" class="col-xs-12" ng-click="favorite('add',currentBeer.id); $event.stopPropagation();" />
+    	</div>
+    </div>
+    <div class="bottom-row col-xs-12">
+        <div ng-if="onTapBreweries.length > 0">
+            <h4>Breweries With This Beer On Tap</h4>
+            <div class="onTapBreweries" ng-repeat="brewery in onTapBreweries" ng-click="go('brewery/' + brewery.id)">
+                {{ brewery.get('businessname') }}
+            </div>
+        </div>
+    </div>
+</div>

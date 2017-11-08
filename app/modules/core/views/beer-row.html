@@ -1,0 +1,9 @@
+<div class="row beer-row" ng-if="beer.get('name') != ''">
+    <div class="col-xs-9 col-md-9 col-lg-10">
+    	<div class="col-xs-12 beer-list-title">
+			<img ng-if="beer.get('image')" style="width:150px;" src="{{ beer.get('image').url() }}">
+			<br ng-if="beer.get('image')" />
+			<span class="title">{{ beer.get('breweries')[0].name }} {{ beer.get('name') }}</span>
+		</div>
+    </div>
+</div>

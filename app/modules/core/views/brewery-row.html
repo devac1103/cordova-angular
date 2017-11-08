@@ -1,0 +1,14 @@
+<div class="brewery row">
+    <div class="col-xs-6">
+        <div class="main-info">
+            <h4 class="brewery-name">{{ brewery.get('businessname') }}</h4>
+            <hour-display></hour-display>
+        </div>
+    </div>
+    <div class="col-xs-4 logo-container">
+        <img class="img img-responsive pull-right" src="{{brewery.get('logoThumb').url()}}">
+    </div>  
+    <div class="col-xs-2 miles-container">
+        <p style="text-align:center">{{ calcDistance(brewery.get('geolat'),brewery.get('geolong')).toFixed(2) }} mi.</p>
+    </div>
+</div>

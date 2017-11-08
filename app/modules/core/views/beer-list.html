@@ -1,0 +1,8 @@
+<div class="alert alert-info col-xs-12" ng-if="beers === null">Building beer list...</div>
+<section ng-if="beers !== null">
+	<ul class="beer-list list-group">
+        <li ng-repeat="beer in beers" data-full-name="{{ beer.get('full_name') }}" class="list-group-item" ng-click="showBeer('{{ beer.id }}')">
+            <beer-row></beer-row>
+        </li>
+    </ul>
+</section>

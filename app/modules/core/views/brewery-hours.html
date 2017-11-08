@@ -1,0 +1,2 @@
+<p class="top-space brewery-{{ getHoursMessage(brewery).storeHours.closedStatus }}">{{ getHoursMessage(brewery).storeHours.message }}</p>
+<p class="top-space kitchen-{{ getHoursMessage(brewery).kitchenHours.closedStatus }}" ng-if="hasKitchen(brewery) && getHoursMessage(brewery).storeHours.closedStatus !== 'closed'">{{ getHoursMessage(brewery).kitchenHours.message }}</p>

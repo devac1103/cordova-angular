@@ -1,0 +1,101 @@
+.center-text {
+    text-align: center;
+}
+
+.top-space {
+    padding-top: 13px;
+}
+
+.navbar-inner {
+    background-color: #222222;
+}
+
+.navbar-inner img {
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.homesection-panel {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.homesection-panel .panel-heading {
+    background-color: darkgreen;
+    color: #dddddd;
+}
+
+.home-message .panel-heading {
+    background-color: #222222;
+    color: #dddddd;
+}
+
+.panel-heading {
+    border-radius: 0px;
+    padding: 3px 15px;
+}
+
+.home-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.home-link {
+    text-decoration: none !important;
+    color: #222222 !important;
+}
+
+.home-link:hover {
+    text-decoration: none !important;
+    color: #222222 !important;
+}
+
+.home-link li:hover {
+    background: #cccccc;
+}
+
+.back-button{
+    color:#dedede;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: -45px;
+}
+
+/* Brewery/Beer View Page */
+
+.header-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #efefef;
+    background-color: green;
+    padding-left: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left:0;
+    margin-top:-40px;
+}
+
+.middle-row{
+    border: 1px solid #dedede;
+    border-top:none;
+    border-bottom:none;
+    padding-left: 15px;
+    margin-left:0;
+}
+
+.bottom-row{
+    border: 1px solid #dedede;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #efefef;
+    margin-left:0;
+}
+
+#uiview{
+    padding-top:10px;
+}
